@@ -26,6 +26,15 @@ For this excersise, I am using the flask web framework for python. Also for conv
 1. Python3 installed
 2. [Virtualenv](http://www.virtualenv.org/en/latest/)
 
-Python3 should be already installed on your machine.. you can test by running the command `python3` this should take you directly to the python3 interpreter with the version saying.. get to know where your python is installed by running the command `which python3' and keep note of the location. we will need it in the next step. In my case, it is `/usr/local/bin/python3`
+Python3 should be already installed on your machine.. you can test by running the command `python3` this should take you directly to the python3 interpreter with the version saying.. get to know where your python is installed by running the command `which python3' and keep note of the location. we will need it in the next step. In my case, it is `/usr/local/bin/python3`. If you dont have python3 installed follow the guide in this [guide](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-16-04)
+
+Now because we will want to isolaate our development environment from others, we need to create an environment with the help of the and point the environment to python3.. This is done with the following steps:
+* `pip install virtualenv`
+* Install the [virtaulenwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) using `pip install virtualenvwrapper`
+* Then export WORKON_HOME=~/Envs
+* mkdir -p $WORKON_HOME
+* source /usr/local/bin/virtualenvwrapper.sh
+* Finally we create our isolated environmnt using the command
+ `mkvirtualenv octopos --python=/usr/local/bin/python3`
 
 
