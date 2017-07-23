@@ -13,13 +13,13 @@ from cryptography.fernet import Fernet
 
 
 
-app = Flask(__name__)
-app.config.from_object("config.DevelopmentConfig")
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+application = Flask(__name__)
+application.config.from_object("config.DevelopmentConfig")
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(application)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def index():
 	from models import Result
 	errors = []
@@ -90,4 +90,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()

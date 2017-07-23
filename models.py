@@ -1,4 +1,4 @@
-from app import db
+from application import db
 
 
 # This class will contain a model of the object we will be using in counting words

@@ -4,7 +4,7 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
 
-from app import app, db
+from application import application as app, db
 from models import Result
 # Set the environment to target migration
 app.config.from_object("config.DevelopmentConfig")
