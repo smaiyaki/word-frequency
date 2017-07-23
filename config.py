@@ -8,6 +8,8 @@ class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = 'this is octopos'
     # Database connection string
+    # Please note that this should ideally be: SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    # Where DATABASE_URL can be added as a system property
     SQLALCHEMY_DATABASE_URI = 'mysql://generic:generic@130.211.185.22/octopos' 
 
 # Production environment config
