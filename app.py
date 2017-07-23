@@ -18,7 +18,7 @@ app.config.from_object("config.DevelopmentConfig")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from models import Result
+from models import *
 @app.route('/', methods=['GET', 'POST'])
 def index():
     errors = []
