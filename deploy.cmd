@@ -121,6 +121,11 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
 :: 4. Install packages
 echo Pip install requirements.
 env\scripts\pip install -r requirements.txt
+echo preparing the database
+env\scripts\python manage.py db init
+env\scripts\python manage.py db migrate
+env\scripts\python manage.py db upgrade
+env\scripts\python manage.py runserver
 IF !ERRORLEVEL! NEQ 0 goto error
 
 REM Add additional package installation here
@@ -134,11 +139,7 @@ IF EXIST "%DEPLOYMENT_SOURCE%\web.%PYTHON_VER%.config" (
   copy /y "%DEPLOYMENT_SOURCE%\web.%PYTHON_VER%.config" "%DEPLOYMENT_TARGET%\web.config"
 )
 
-echo preparing the database
-env\scripts\python manage.py db init
-env\scripts\python manage.py db migrate
-env\scripts\python manage.py db upgrade
-env\scripts\python manage.py runserver
+
 
 :: 6. Django collectstatic
 IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
