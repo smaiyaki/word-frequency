@@ -1,3 +1,5 @@
+--find-links wheelhouse
+wheel
 alembic==0.9.3
 asn1crypto==0.22.0
 beautifulsoup4==4.4.1
