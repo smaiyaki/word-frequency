@@ -76,11 +76,16 @@ The first line is not required but its a hack I had to use to fix a bug with azu
 * `python manage.py db migrate` this creates the "migrations" folder with instructions on how to create the db
 * `python manage.py db upgrade` to do the actual migration which involves creating the database struction from the defintion of the models in *models.py*
 * `python manage.py runserver` this should start the app and reachable on port 5000.
-* Try accessing http://localhost:5000/ and try with the url http://example.com .. it will work and deploy the result as per screenshot
+* Try accessing http://localhost:5000/ and try with the url http://example.com .. it will work and deploy the result as per ![screenshot](https://github.com/smaiyaki/word-frequency/blob/master/Screen%20Shot%202017-07-24%20at%2000.45.33.png)
 
 As you can see, this has achieved up to partial fullfilment of requirement 5 of the exercise. I couldn't make it to the last requirement due to challenges I faced with deployments.
 
 ### Deployments ###
 I have tried deploying on Azure. I made considerable progress but missing out in the final stages. my app is accessible on http://wordcount.azurewebsites.net/. The firs issue I faced was the inability to install the critical python modules as described in this [page](https://github.com/Azure/azure-sdk-for-python/issues/1044). I had to manually download the modules wheel files as described in https://github.com/Azure/azure-sdk-for-python/issues/1044
+
+I reached a stage where the app is says it has deployed successfully, but it appears to juts stop at doing the pip install only. It does not go beyond. I tried to solve that issue by adding a custom `deploy.cmd` file but that did not help me as well. see ![screesnhot](https://github.com/smaiyaki/word-frequency/blob/master/Screen%20Shot%202017-07-24%20at%2001.24.36.png)
+
+I have now switch to using the AWS ebs for the deployment and the URL is available at http://octopos-test.eu-west-2.elasticbeanstalk.com/
+
 
 
